@@ -14,37 +14,49 @@
 <body>
 
     <header>
-        <img src="./assets/logo.svg" alt="Logo Dev Financce">
+        <img src="./assets/logo.svg" alt="Logo Dev Finace">
     </header>
 
     <main class="container">
         <section id="balance">
-            <h2>Balanço</h2>
+            <h2 class="sr-only">Balanço</h2>
 
             <div class="card">
-                    <h3>Entrtadas</h3>
+                    <h3>
+                        <span>Entrtadas</span>
+                        <img src="./assets/income.svg" alt="Image de entrtadas">
+                    </h3>
                     <p>R$ 5.000,00</p>
             </div>
 
             <div class="card">
-                <h3>Saídas</h3>
+                <h3>
+                    <span>Saídas</span>
+                    <img src="./assets/expense.svg" alt="image de saídas">
+                </h3>
                 <p>R$ 2.000,00</p>
             </div>
 
             <div class="card total">
-                <h3>Total</h3>
+                <h3>
+                    <span>Total</span>
+                    <img src="./assets/total.svg" alt="Image de total">
+                </h3>
                 <p>R$ 3.000,00</p>
             </div>    
 
         </section>
         <section id="transaction">
-            <h2>Transações</h2>
+            <h2 class="sr-only">Transações</h2>
+
+            <a href="#" class="button new">+ Nova Transação</a>
             <table id="data-table">
                 <thead>
                     <tr>
                         <th>Descrição</th>
                         <th>Valor</th>
                         <th>Data</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,16 +64,25 @@
                         <td class="description">Luz</td>
                         <td class="expense">- R$ 500,00</td>
                         <td class="data">23/01/2021</td>
+                        <td>
+                            <img src="./assets/minus.svg" alt="Remover Transação">
+                        </td>
                     </tr>
                     <tr>
                         <td class="description">Criação Website</td>
                         <td class="income">R$ 5.000,00</td>
                         <td class="data">23/01/2021</td>
+                        <td>
+                            <img src="./assets/minus.svg" alt="Remover Transação">
+                        </td>
                     </tr>
                     <tr>
                         <td class="description">Internet</td>
                         <td class="expense">- R$200,00</td>
                         <td class="data">23/01/2021</td>
+                        <td>
+                            <img src="./assets/minus.svg" alt="Remover Transação">
+                        </td>
 
                     </tr>
                 </tbody>
@@ -70,7 +91,64 @@
 
     </main>
 
-    <footer><p>dev.finace$</p></footer>
+<div class="modal-overlay">
+    <div class="modal">
+        <div id="form">
+            <h2> Nova Transação</h2>
+            <form action="">
+                <div class="input-group">
+                    <label 
+                        class="sr-only"
+                        for="description">Descrição
+                    </label>
+                    <input
+                        type="text"
+                        id="description"
+                        name="description"
+                        placeholder="Descrição"
+                    />        
+                </div>
 
+                <div class="input-group">
+                    <label 
+                        class="sr-only"
+                        for="amount">Valor
+                    </label>
+                    <input
+                        type="number"
+                        step="0.1"
+                        id="amount"
+                        name="amount"
+                        placeholder="0.00"
+                    />        
+
+                    <small class="help">Use o sinal - (Negativo) para ddespesas e , (vírgula) 
+                    paraca casas decimas</small>
+                </div>
+
+                <div class="input-group">
+                    <label 
+                        class="sr-only"
+                        for="date">Data
+                    </label>
+                    <input
+                        type="date"
+                        id="date"
+                        name="date"
+                    />        
+                </div>
+
+                <div class="input-group actions">
+                    <a href="#" class="button cancel">Cancelar</a>
+                    <button>Salvar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+    <footer><p>dev.finace$</p></footer>
+    <script src="./scripts.js"></script>
 </body>
 </html>
