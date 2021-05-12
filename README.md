@@ -1,2 +1,2 @@
 # Maratona-Discover
-First dicover ```_maraton project_```
+First dicover ```maraton project```
